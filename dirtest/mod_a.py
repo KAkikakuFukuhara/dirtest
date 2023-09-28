@@ -1,1 +1,1 @@
-print("import liba")
+print("import moda")
