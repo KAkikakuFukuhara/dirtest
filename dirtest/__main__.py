@@ -10,6 +10,7 @@ def parse_args():
     subparsers = parser.add_subparsers()
     add_exe1(subparsers)
     add_exe2(subparsers)
+    add_exe3(subparsers)
 
     cli_kwargs = vars(parser.parse_args())
     if "handler" not in cli_kwargs.keys():
@@ -39,6 +40,16 @@ def add_exe2(subpasers:_SubParsersAction):
     def callback(*args, **kwargs):
         from dirtest.tools import exe2
         exe2.main(**kwargs)
+
+    parser.set_defaults(handler=callback)
+
+
+def add_exe3(subpasers:_SubParsersAction):
+    parser: ArgumentParser = subpasers.add_parser("exe3")
+
+    def callback(*args, **kwargs):
+        from dirtest.tools import exe3
+        exe3.main(**kwargs)
 
     parser.set_defaults(handler=callback)
 

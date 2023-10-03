@@ -1,13 +1,11 @@
 [tool.poetry]
-name = "dirtest"
+name = "sba"
 version = "0.1.0"
 description = ""
 authors = ["Kenta Fukuhara <105337464+KAkikakuFukuhara@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.8, <3.11"
-submodule_a = {path="pkgs/submodule_a", develop=true}
-sb = {path="pkgs/sb", develop=true}
 
 [tool.poetry.dev-dependencies]
 
