@@ -1,12 +1,12 @@
-from argparse import ArgumentParser, _SubParsersAction
+'''
+親ディレクトリにあるモジュールを読み込むテスト
+'''
+from argparse import ArgumentParser
 from pathlib import Path
 
 if __name__ == "__main__":
     import _path_adding
-else:
-    from . import _path_adding
 from dirtest import mod_a
-from dirtest.submodule_a import submodule_a
 
 def parse_args():
     parser = ArgumentParser()

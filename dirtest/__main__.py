@@ -1,4 +1,9 @@
+'''
+tools 直下の exe1.py を __main__ から実行できるか確認する。
+'''
 from argparse import ArgumentParser, _SubParsersAction
+
+import _path_adding
 
 def parse_args():
     parser = ArgumentParser()
@@ -21,7 +26,7 @@ def add_exe1(subpasers:_SubParsersAction):
     parser.add_argument("dir", type=str)
 
     def callback(*args, **kwargs):
-        from tools import exe1
+        from dirtest.tools import exe1
         exe1.main(**kwargs)
 
     parser.set_defaults(handler=callback)
