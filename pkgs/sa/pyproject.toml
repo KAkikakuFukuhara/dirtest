@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "submodule_a"
+name = "sa"
 version = "0.1.0"
 description = ""
 authors = ["Kenta Fukuhara <105337464+KAkikakuFukuhara@users.noreply.github.com>"]

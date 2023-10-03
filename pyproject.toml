@@ -6,7 +6,7 @@ authors = ["Kenta Fukuhara <105337464+KAkikakuFukuhara@users.noreply.github.com>
 
 [tool.poetry.dependencies]
 python = ">=3.8, <3.11"
-submodule_a = {path="pkgs/submodule_a", develop=true}
+sa = {path="pkgs/sa", develop=true}
 sb = {path="pkgs/sb", develop=true}
 
 [tool.poetry.dev-dependencies]

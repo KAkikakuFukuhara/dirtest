@@ -1,4 +1,4 @@
-print('import submoduleA')
+print('import modsa')
 
 from pathlib import Path
 def printpath():

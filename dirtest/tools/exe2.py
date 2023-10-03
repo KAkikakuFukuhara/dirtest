@@ -5,7 +5,7 @@
 from argparse import ArgumentParser
 
 import _path_adding
-from dirtest.submodule_a import submodule_a
+from dirtest.sa import modsa
 
 
 def parse_args():
@@ -14,7 +14,7 @@ def parse_args():
 
 
 def main(*args, **kwargs):
-    submodule_a.printpath()
+    modsa.printpath()
 
 
 if __name__ == "__main__":
