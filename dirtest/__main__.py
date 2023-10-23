@@ -17,12 +17,11 @@ def add_argument(parser:ArgumentParser):
 def main(*args, **kwargs):
     parser = ArgumentParser()
     parser = add_argument(parser)
-    if not __name__ == "__main__":
-        parser.print_help()
-    elif "handler" not in kwargs.keys():
+    if "handler" not in kwargs.keys():
         parser.print_help()
     else:
-        kwargs["handler"](**kwargs)
+        handler = kwargs.pop("handler")
+        handler(**kwargs)
 
 
 def add_exe1(subpasers:_SubParsersAction):
