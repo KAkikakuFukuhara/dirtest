@@ -26,22 +26,14 @@ def add_exe41(subpasers:_SubParsersAction):
     from dirtest.tools.exe4 import exe41
     parser: ArgumentParser = subpasers.add_parser("exe41")
     parser = exe41.add_argument(parser)
-
-    def callback(*args, **kwargs):
-        exe41.main(**kwargs)
-
-    parser.set_defaults(handler=callback)
+    parser.set_defaults(handler=exe41.main)
 
 
 def add_exe42(subpasers:_SubParsersAction):
     from dirtest.tools.exe4 import exe42
     parser: ArgumentParser = subpasers.add_parser("exe42")
     parser = exe42.add_argument(parser)
-
-    def callback(*args, **kwargs):
-        exe42.main(**kwargs)
-
-    parser.set_defaults(handler=callback)
+    parser.set_defaults(handler=exe42.main)
 
 
 if __name__ == "__main__":
