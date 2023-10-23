@@ -5,22 +5,23 @@ from argparse import ArgumentParser, _SubParsersAction
 
 import _path_adding
 
-def parse_args():
-    parser = ArgumentParser()
+def add_argument(parser:ArgumentParser):
     subparsers = parser.add_subparsers()
     add_exe1(subparsers)
     add_exe2(subparsers)
     add_exe3(subparsers)
     add_exe4(subparsers)
-
-    cli_kwargs = vars(parser.parse_args())
-    if "handler" not in cli_kwargs.keys():
-        parser.print_help()
-    return cli_kwargs
+    return parser
 
 
 def main(*args, **kwargs):
-    if "handler" in kwargs.keys():
+    parser = ArgumentParser()
+    parser = add_argument(parser)
+    if not __name__ == "__main__":
+        parser.print_help()
+    elif "handler" not in kwargs.keys():
+        parser.print_help()
+    else:
         kwargs["handler"](**kwargs)
 
 
@@ -69,4 +70,6 @@ def add_exe4(subpasers:_SubParsersAction):
 
 
 if __name__ == "__main__":
-    main(**parse_args())
+    parser = ArgumentParser()
+    parser = add_argument(parser)
+    main(**vars(parser.parse_args()))
