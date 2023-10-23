@@ -8,10 +8,9 @@ if __name__ == "__main__":
     import _path_adding
 from dirtest import mod_a
 
-def parse_args():
-    parser = ArgumentParser()
+def add_argument(parser:ArgumentParser) -> ArgumentParser:
     parser.add_argument("dir", type=str)
-    return vars(parser.parse_args())
+    return parser
 
 
 def main(*args, **kwargs):
@@ -20,4 +19,6 @@ def main(*args, **kwargs):
 
 
 if __name__ == "__main__":
-    main(**parse_args())
+    parser = ArgumentParser()
+    parser = add_argument(parser)
+    main(**vars(parser.parse_args()))

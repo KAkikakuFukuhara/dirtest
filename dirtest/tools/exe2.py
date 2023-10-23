@@ -7,10 +7,8 @@ from argparse import ArgumentParser
 import _path_adding
 from dirtest.sa import modsa
 
-
-def parse_args():
-    parser = ArgumentParser(description=__doc__)
-    return vars(parser.parse_args())
+def add_argument(parser:ArgumentParser) -> ArgumentParser:
+    return parser
 
 
 def main(*args, **kwargs):
@@ -18,4 +16,6 @@ def main(*args, **kwargs):
 
 
 if __name__ == "__main__":
-    main(**parse_args())
+    parser = ArgumentParser()
+    parser = add_argument(parser)
+    main(**vars(parser.parse_args()))

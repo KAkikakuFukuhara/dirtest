@@ -24,31 +24,33 @@ def main(*args, **kwargs):
 
 
 def add_exe1(subpasers:_SubParsersAction):
+    from dirtest.tools import exe1
     parser: ArgumentParser = subpasers.add_parser("exe1")
-    parser.add_argument("dir", type=str)
+    parser = exe1.add_argument(parser)
 
     def callback(*args, **kwargs):
-        from dirtest.tools import exe1
         exe1.main(**kwargs)
 
     parser.set_defaults(handler=callback)
 
 
 def add_exe2(subpasers:_SubParsersAction):
+    from dirtest.tools import exe2
     parser: ArgumentParser = subpasers.add_parser("exe2")
+    parser = exe2.add_argument(parser)
 
     def callback(*args, **kwargs):
-        from dirtest.tools import exe2
         exe2.main(**kwargs)
 
     parser.set_defaults(handler=callback)
 
 
 def add_exe3(subpasers:_SubParsersAction):
+    from dirtest.tools import exe3
     parser: ArgumentParser = subpasers.add_parser("exe3")
+    parser = exe3.add_argument(parser)
 
     def callback(*args, **kwargs):
-        from dirtest.tools import exe3
         exe3.main(**kwargs)
 
     parser.set_defaults(handler=callback)
